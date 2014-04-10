@@ -21,6 +21,11 @@ compile '/assets/stylesheets/*' do
   filter :sass, Compass.sass_engine_options.merge(:syntax => item[:extension].to_sym)
 end
 
+compile '/' do
+  layout 'grid'
+  layout 'default'
+end
+
 compile '*' do
   if item[:extension] == 'css'
     # don’t filter stylesheets
@@ -37,7 +42,8 @@ route '/assets/images/*' do
 end
 
 route '/assets/javascripts/*' do
-  #ignore javascripts for now
+  # flatten assets to assets/ similar to rails
+  '/assets/' + File.basename(item.identifier) + '.' + item[:extension]
 end
 
 route '/assets/stylesheets/*' do

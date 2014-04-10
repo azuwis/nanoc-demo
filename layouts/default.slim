@@ -2,9 +2,10 @@ doctype html
 html lang="en"
   head
     meta charset='utf-8'
-    title A Brand New nanoc Site - #{@item[:title]}
+    title Great Cooks of Tiffy - #{@item[:title]}
     link href='/assets/app.css' rel='stylesheet' media='screen, projector, print' type='text/css'
     meta name='generator' content='nanoc #{Nanoc::VERSION}'
+    script src='/assets/jquery.js'
 
   body
     .header
@@ -12,13 +13,12 @@ html lang="en"
         nav.top-bar
           ul.title-area
             li.name
-              h1: a href='/' Home
+              h1: a href='/' Great Cooks of Tiffy
           section.top-bar-section
             ul.right
               li.divider
               li: a href='#' About
               li.divider
+              li.has-form: a.small.button href='#' Random
 
-    .row
-      .twelve.colums
-        == yield
+      == yield

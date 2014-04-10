@@ -1,0 +1,9 @@
+.row
+  .large-12.columns
+    h1.text-center.subheader Great Cooks of Tiffy
+.row
+  ul.small-block-grid-2.large-block-grid-3
+    - for food in @item[:foods]
+      li
+        a.th.th-item target='_blank' href = food[:href] style="background-image: url(#{food[:img]});"
+        .text-center = food[:name]
